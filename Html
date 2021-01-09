@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Tusega</title>
+      <script src="https://kit.fontawesome.com/3927dd2fba.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+      <div class="medsos">
+        <div class="container">
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </div>
+        <div id="theme">
+          <div onclick="setDarkMode(true)" id="darkBtn">
+            <span class="fa fa-moon" >Dark</span>
+          </div>
+          <div onclick="setDarkMode(false)" id="lightBtn" class="is-hidden">
+            <span class="fa fa-sun">Light</span>
+          </div>
+        </div>
+
+        <style type="text/css">
+          body.darkmode {
+            background-color: rgb(57, 57, 57);
+            color : rgb (277, 277, 277);
+          }
+          #theme:hover{
+            cursor: pointer;
+          }
+          .is-hidden{
+            display: none;
+          }
+          .theme{
+            margin: 5% auto;
+          }
+        </style>
+      </div>
+
+        <header>
+        <div class="container">
+          <h1>Tusega</h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Items</a></li>
+          <li><a href="#">Confirm Payment</a></li>
+          <li><a href="#">Register</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="banner">
+      <h2>WELCOME TO OUR WEBSITE</h2>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <h3>ABOUT US</h3>
+        <p>Tusega merupakan sebuah <strong>Cutlery (alat makan)</strong>, dimana kita menggabungkan sendok, garpu, dan tusuk gigi dalam satu bentuk.
+        Kami juga menggunakan bahan yang ramah lingkungan untuk pembuatan produk kami ini.</p>
+      </div>
+    </section>
+
+    <section class="product">
+      <div class="container">
+        <h3>PRODUCT</h3>
+      </div>
+      <div class="item">
+        <div class="item-icon">
+          <img src="prototype 1.jpg" alt="Image" height="250" width="260">
+        </div>
+        <p class="text-contents">UKURAN</p>
+      </div>
+      <div class="item">
+        <div class="item-icon">
+          <img src="prototype 2.jpg" alt="Image" height="250" width="260">
+        </div>
+        <p class="text-contents">UKURAN</p>
+      </div>
+      <div class="item">
+        <div class="item-icon">
+          <img src="tusega.jpg" alt="Image" height="250" width="260">
+        </div>
+        <p class="text-contents">TUSEGA</p>
+      </div>
+      <div class="item">
+        <div class="item-icon">
+          <img src="prototype final.jpg" alt="Image" height="250" width="200">
+        </div>
+        <p class="text-contents">TUSEGA</p>
+      </div>
+    </section>
+
+    <section class="contact-form">
+        <h3 class="section-title">Contact us</h3>
+        <p>Email (Required)</p>
+        <input>
+        <p>Message (Required)</p>
+        <textarea></textarea>
+        <p>* Required fields must be filled</p>
+        <input class="contact-submit" type="submit" value="Send">
+      </section>
+
+      <footer>
+        <div class="container">
+          <small>Copyright &copy; 2020 - Tusega. All Right Reserved</small>
+        </div>
+        <div class="contact">
+          <span class="fa fa-phone">123-456-789</span>
+          <span class="fa fa-envelope">info@tusega.com</span>
+        </div>
+      </footer>
+
+      <script type="text/javascript">
+        if(localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+       function setDarkMode(isDark){
+         var darkBtn = document.getElementById('darkBtn')
+         var lightBtn = document.getElementById('lightBtn')
+
+         if(isDark) {
+           lightBtn.style.display = "block"
+           darkBtn.style.display = "none"
+           localStorage.setItem('preferredTheme','dark');
+         }
+         else {
+           lightBtn.style.display = "none"
+           darkBtn.style.display = "block"
+           localStorage.removeItem('preferredTheme');
+         }
+
+         document.body.classList.toggle("darkmode");
+       }
+      </script>
+  </body>
+</html>
